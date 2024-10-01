@@ -14,7 +14,7 @@ class ColumnScenario extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Column Scenarios",style: TextStyle(
+          title: const Text("Space Parameters",style: TextStyle(
             fontWeight: FontWeight.bold , color: Colors.white , fontSize: 40
           ), ),
           centerTitle: true,
