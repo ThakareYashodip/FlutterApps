@@ -1,34 +1,34 @@
 import "package:flutter/material.dart";
 
 void main() {
-  runApp(columnScroll());
+  runApp(const ColumnScroll());
 }
 
-class columnScroll extends StatelessWidget {
-  const columnScroll({super.key});
+class ColumnScroll extends StatelessWidget {
+  const ColumnScroll({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: scrollCol(),
+      home: ScrollCol(),
     );
   }
 }
 
-class scrollCol extends StatefulWidget {
-  const scrollCol({super.key});
+class ScrollCol extends StatefulWidget {
+  const ScrollCol({super.key});
 
   @override
-  State createState() => _scrollCol();
+  State createState() => _ScrollCol();
 }
 
-class _scrollCol extends State<scrollCol> {
+class _ScrollCol extends State<ScrollCol> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Column Scroll',
+        title: const Text(' Top Tennis Players',
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -48,15 +48,14 @@ class _scrollCol extends State<scrollCol> {
             ),
             const SizedBox(
               height: 50,
-              width: 200,
+              width: 400,
               child: Center(
-                child: Text("jannik sinner",
+                child: Text("Rank 1 : jannik sinner",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,)),
               ),
             ),
-            const SizedBox(height: 30,),
             Image.network(
               "https://e0.365dm.com/17/10/2048x1152/skysports-alexander-zverev-tennis-china-open_4118672.jpg?20171003182058",
               fit: BoxFit.cover,
@@ -65,16 +64,15 @@ class _scrollCol extends State<scrollCol> {
             ),
             const SizedBox(
               height: 50,
-              width: 200,
+              width: 400,
               child: Center(
-                child: Text("Alexander Zverev",
+                child: Text("Rank 2 : Alexander Zverev",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,)),
               ),
             ),
-            const SizedBox(height: 30,),
-            Image.network(
+              Image.network(
               "https://www.atptour.com/-/media/images/news/2024/08/24/19/37/alcaraz-us-open-2024-practice-bh.jpg",
               fit: BoxFit.cover,
               height: 300,
@@ -82,15 +80,46 @@ class _scrollCol extends State<scrollCol> {
             ),
             const SizedBox(
               height: 50,
-              width: 200,
+              width: 400,
               child: Center(
-                child: Text("Carlos Alcaraz",
+                child: Text("Rank 3 : Carlos Alcaraz",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,)),
               ),
             ),
-            const SizedBox(height: 30,),
+             Image.network(
+              "https://www.atptour.com/-/media/images/news/2024/09/03/19/09/djokovic-us-open-2024-volley.jpg",
+              fit: BoxFit.cover,
+              height: 300,
+              width: 411,
+            ),
+            const SizedBox(
+              height: 50,
+              width: 400,
+              child: Center(
+                child: Text("Rank 4 : Novak Djokovic",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,)),
+              ),
+            ),
+             Image.network(
+              "https://cloudfront-us-east-2.images.arcpublishing.com/reuters/A4VK6IQF3RMFFFXOOUO4R3D52Q.jpg",
+              fit: BoxFit.cover,
+              height: 300,
+              width: 411,
+            ),
+            const SizedBox(
+              height: 50,
+              width: 400,
+              child: Center(
+                child: Text("Rank 5 : Daniil Medvedev",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,)),
+              ),
+            ),
           ],
         ),
       ),
