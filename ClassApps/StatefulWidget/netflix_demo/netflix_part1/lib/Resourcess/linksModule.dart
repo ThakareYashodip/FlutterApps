@@ -1,8 +1,8 @@
 
 
-  List<Map> BigPoster = [
+  List<Map> MoviePosters = [
     {
-      'name': 'Action Movies',
+      'name': 'Upcoming Movies',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/08/Maalik.jpg',
       'Genre': [
@@ -19,7 +19,7 @@
       ]
     },
     {
-      'name': 'Adventure',
+      'name': 'Releases in the Past Year',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/09/Devara-Part-1-6.jpg',
       'Genre': [
@@ -53,7 +53,7 @@
       ]
     },
     {
-      'name': 'Comedy',
+      'name': 'Madness For You',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/09/Bhoot-Bangla-540x960.jpg',
       'Genre': [
@@ -70,7 +70,7 @@
       ]
     },
     {
-      'name': 'Crime',
+      'name': 'Suspenseful Movies ',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/09/Jigra-1-2.jpg',
       'Genre': [
@@ -87,7 +87,7 @@
       ]
     },
     {
-      'name': 'Drama',
+      'name': 'Selected for You Today',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/09/Coolie-533x800.jpg',
       'Genre': [
@@ -104,7 +104,7 @@
       ]
     },
     {
-      'name': 'Fantasy',
+      'name': 'Only on Netflix',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/08/Yudhra-2.jpg',
       'Genre': [
@@ -121,7 +121,7 @@
       ]
     },
     {
-      'name': 'Sports',
+      'name': 'Spoorts Movies',
       'imageUrl':
           'https://stat5.bollywoodhungama.in/wp-content/uploads/2024/08/Rann-533x800.jpg',
       'Genre': [
@@ -138,7 +138,7 @@
       ]
     },
     {
-      'name': 'Romance',
+      'name': 'Romantic Movies',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/07/Stree-2-4.jpg',
       'Genre': [
@@ -155,7 +155,7 @@
       ]
     },
     {
-      'name': 'Family',
+      'name': 'Family Night',
       'imageUrl':
           'https://media5.bollywoodhungama.in/wp-content/uploads/2024/06/Kill-4-540x960.jpg',
       'Genre': [

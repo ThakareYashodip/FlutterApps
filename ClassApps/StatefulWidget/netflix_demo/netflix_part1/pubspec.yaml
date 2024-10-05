@@ -16,4 +16,11 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets\Fonts\static\Montserrat-Medium.ttf
