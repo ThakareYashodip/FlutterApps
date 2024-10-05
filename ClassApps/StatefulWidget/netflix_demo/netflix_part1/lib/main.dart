@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_part1/Authentication/NetFlixLandingPage1.dart';
+import 'package:netflix_part1/Authentication/userSelection.dart';
 import 'DashBoard/HomeScreen.dart';
 import "Authentication/NetFlixLandingPage2.dart";
 
@@ -29,6 +30,6 @@ class NetFlix extends StatefulWidget {
 class _NetFlix extends State {
   @override
   Widget build(BuildContext context) {
-    return NetFlixLandingPage1();
+    return userSelection();
   }
 }
