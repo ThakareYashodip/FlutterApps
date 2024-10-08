@@ -52,7 +52,7 @@ class _ReadyToWatch extends State{
                   hintText: "Email",
                   hintStyle: const TextStyle(fontSize: 14, color: Colors.black45,fontFamily: "Montserrat"),
                 ),
-                style: const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
+                style: const TextStyle(fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
               ),
             ),
             const SizedBox(height: 20),
