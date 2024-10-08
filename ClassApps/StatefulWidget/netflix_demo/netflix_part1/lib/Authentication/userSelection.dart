@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_part1/DashBoard/HomeScreen.dart';
 
-Scaffold userSelection() {
-  return Scaffold(
+class userSelection extends StatefulWidget {
+  const userSelection({super.key});
+
+  @override
+  State<userSelection> createState() => _userSelectionState();
+}
+
+class _userSelectionState extends State<userSelection> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
     appBar: AppBar(
       toolbarHeight: 80,
       title: Image.network(
@@ -20,9 +30,6 @@ Scaffold userSelection() {
             ),
             onPressed: () {}),
       ],
-      // shape: RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.circular(30),
-      // ),
     ),
     body: Container(
       height: double.infinity,
@@ -54,6 +61,7 @@ Scaffold userSelection() {
                   GestureDetector(
                     onTap: () {
                       print("Ganu");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen() ));
                     },
                     child: Container(
                       height: 100,
@@ -86,6 +94,7 @@ Scaffold userSelection() {
                   GestureDetector(
                     onTap: () {
                       print("Yashodip");
+                      Navigator.push(context ,MaterialPageRoute(builder: (context) => HomeScreen() ));
                     },
                     child: Container(
                       height: 100,
@@ -124,6 +133,7 @@ Scaffold userSelection() {
                   GestureDetector(
                     onTap: () {
                       print("Bhushan");
+                      Navigator.push(context , MaterialPageRoute(builder: (context) => HomeScreen() ));
                     },
                     child: Container(
                       height: 100,
@@ -156,6 +166,7 @@ Scaffold userSelection() {
                   GestureDetector(
                     onTap: () {
                       print("Sunny");
+                      Navigator.push(context , MaterialPageRoute(builder: (context) => HomeScreen() ));
                     },
                     child: Container(
                       height: 100,
@@ -188,6 +199,7 @@ Scaffold userSelection() {
           GestureDetector(
             onTap: () {
               print("Spiderman");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
             },
             child: Container(
               height: 100,
@@ -214,4 +226,5 @@ Scaffold userSelection() {
       ),
     ),
   );
+  }
 }

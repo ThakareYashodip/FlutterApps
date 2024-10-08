@@ -30,6 +30,6 @@ class NetFlix extends StatefulWidget {
 class _NetFlix extends State {
   @override
   Widget build(BuildContext context) {
-    return userSelection();
+    return const NetFlixLandingPage1();
   }
 }

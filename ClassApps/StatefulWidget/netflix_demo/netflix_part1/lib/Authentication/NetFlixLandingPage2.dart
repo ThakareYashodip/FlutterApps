@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_part1/Authentication/userSelection.dart';
 
-Scaffold NetFlixLandingPage2() {
-  return Scaffold(
+
+class NetFlixLandingPage2 extends StatefulWidget {
+  const NetFlixLandingPage2({super.key});
+
+  @override
+  State<NetFlixLandingPage2> createState() => _NetFlixLandingPage2State();
+}
+
+class _NetFlixLandingPage2State extends State<NetFlixLandingPage2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
     body: Container(
-      height: double.infinity,
-      width: double.infinity,
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(
             image: NetworkImage(
@@ -12,55 +23,72 @@ Scaffold NetFlixLandingPage2() {
             fit: BoxFit.cover),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 520,
+            height: 30,
           ),
-          const Text(
-            "    Unlimited \nentertainment,\n one low price.",
-            style: TextStyle(
-              fontSize: 28, fontWeight: FontWeight.bold , color: Colors.white , fontFamily: "Montserrat"
-            ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: IconButton(
+              onPressed: (){
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.navigate_before_rounded,size: 40, color: Colors.white,)),
           ),
-          const SizedBox(height: 20,),
-          const Text(
-            "   All of Netflix, starting at just \n                         ₹149.",
-            style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w500 , color: Colors.white , fontFamily: "Montserrat"
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-            child: Text("o          o         o         o",style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),),
-          ),
-          const SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          const Spacer(),
+          Column(
             children: [
-              GestureDetector(
-                onTap: (){
-                  print("GET STARTED");
-                },
-                child: Container(
-                  height: 50,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 196, 21, 8)
-                  ),
-                  width: 380,
-                  child: const Center(
-                    child:  Text(
-                      "GET STARTED",
-                      style: TextStyle(
-                        fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold , fontFamily: "Montserrat"
-                      ),
+              const Text(
+          "    Unlimited \nentertainment,\n one low price.",
+          style: TextStyle(
+            fontSize: 28, fontWeight: FontWeight.bold , color: Colors.white , fontFamily: "Montserrat"
+          ),
+                    ),
+                    const SizedBox(height: 20,),
+                    const Text(
+          "   All of Netflix, starting at just \n                         ₹149.",
+          style: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.w500 , color: Colors.white , fontFamily: "Montserrat"
+          ),
+                    ),
+                    const SizedBox(
+          height: 20,
+          child: Text("o          o         o         o",style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),),
+                    ),
+                    const SizedBox(height: 10,),
+                    Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: (){
+                print("GET STARTED");
+                Navigator.push(context, MaterialPageRoute(builder: (context) => userSelection()));
+              },
+              child: Container(
+                height: 50,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 196, 21, 8)
+                ),
+                width: 380,
+                child: const Center(
+                  child:  Text(
+                    "GET STARTED",
+                    style: TextStyle(
+                      fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold , fontFamily: "Montserrat"
                     ),
                   ),
                 ),
               ),
+            ),
+          ],
+                    )
             ],
-          )
+          ),
         ],
       ),
     ),
   );
+  }
 }
+
