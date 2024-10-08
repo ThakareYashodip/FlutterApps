@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_part1/DashBoard/CategoriesList.dart';
+import 'package:netflix_part1/DashBoard/ProfilesAndMore.dart';
 import '../Resourcess/HomePageLinks.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,15 +36,17 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {},
             icon: const Icon(
               Icons.search,
-              size: 30,
+              size: 32,
               color: Colors.white,
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context , MaterialPageRoute(builder: (context) => const ProfilesAndMore()));
+            },
             icon: const Icon(
-              Icons.cast_connected,
-              size: 30,
+              Icons.person_4,
+              size: 32,
               color: Colors.white,
             ),
           ),
@@ -71,9 +74,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "TV Shows",
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Montserrat',),
                               ),
                             ),
                           ),
@@ -86,9 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Movies",
                                 style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Montserrat',),
                               ),
                             ),
                           ),
@@ -104,9 +109,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Text(
                                     "Categories",
                                     style: TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 16,
                                         color: Colors.white,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Montserrat',
+                                      ),
                                   ),
                                 ),
                                 Icon(Icons.arrow_drop_down,size: 25,color: Colors.white,)
@@ -173,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 Text(
                                   "MyList",
-                                  style: TextStyle(fontSize: 15, color: Colors.white),
+                                  style: TextStyle(fontSize: 14, color: Colors.white,fontFamily: 'Montserrat',),
                                 ),
                               ],
                             ),
@@ -199,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   Text(
                                     "Play",
-                                    style: TextStyle(fontSize: 18, color: Colors.black),
+                                    style: TextStyle(fontSize: 15, color: Colors.black,fontFamily: 'Montserrat',),
                                   ),
                                 ],
                               ),
@@ -216,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 Text(
                                   "Info",
-                                  style: TextStyle(fontSize: 15, color: Colors.white),
+                                  style: TextStyle(fontSize: 14, color: Colors.white,fontFamily: 'Montserrat',),
                                 ),
                               ],
                             ),
@@ -240,9 +247,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 "  ${MoviePosters[index]['name']}",
                                 style: const TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat',
                                 ),
                               ),
                               SizedBox(

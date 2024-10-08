@@ -19,7 +19,6 @@ class _CategoriesList extends State {
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
-        physics:const  BouncingScrollPhysics(),
         child: Column(
           children: [
             Container(

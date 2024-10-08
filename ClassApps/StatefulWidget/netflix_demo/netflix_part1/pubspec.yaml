@@ -24,6 +24,12 @@ flutter:
   assets:
     - assets\NetFlixLogo\NSymbol.jpg
     - assets\NetFlixLogo\NetFlixSymbol.jpg
+    - assets\UserIcons\spiderman-figure-wallpaper_1198708-12521.avif
+    - assets\UserIcons\picture-boy-with-red-background_969863-279244.avif
+    - assets\UserIcons\drawing-anime-character-with-hoodie-it_1308172-177478.avif
+    - assets\UserIcons\cartoon-man-with-blue-jacket-blue-jacket_983286-5842.avif
+    - assets\UserIcons\boy-with-hoodie-that-says-hes-boy_1002151-24837.avif
+    - assets\UserIcons\Netflix-avatar.png
 
   fonts:
     - family: Montserrat

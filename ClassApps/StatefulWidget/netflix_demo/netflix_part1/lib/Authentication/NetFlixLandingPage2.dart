@@ -28,13 +28,34 @@ class _NetFlixLandingPage2State extends State<NetFlixLandingPage2> {
           const SizedBox(
             height: 30,
           ),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: IconButton(
-              onPressed: (){
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.navigate_before_rounded,size: 40, color: Colors.white,)),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: IconButton(
+                  onPressed: (){
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.navigate_before_rounded,size: 40, color: Colors.white,)),
+              ),
+              const Spacer(),
+              GestureDetector(
+                onTap: () {},
+                child: const Text(
+                  'Privacy',
+                  style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: "Montserrat",fontWeight: FontWeight.w700),
+                ),
+              ),
+              const SizedBox(width: 25,),
+              GestureDetector(
+                onTap: () {},
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: "Montserrat",fontWeight: FontWeight.w700),
+                ),
+              ),
+              const SizedBox(width: 15,),
+            ],
           ),
           const Spacer(),
           Column(
