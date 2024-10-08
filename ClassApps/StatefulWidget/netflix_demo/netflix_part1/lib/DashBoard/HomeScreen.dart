@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_part1/DashBoard/SearchBox.dart';
+import 'package:netflix_part1/DashBoard/CategoriesList.dart';
 import '../Resourcess/HomePageLinks.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,9 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
             letterSpacing: 5),
         actions: [
           IconButton(
-            onPressed: () {
-              Navigator.push(context , MaterialPageRoute(builder: (context) => const SearchBox()));
-            },
+            onPressed: () {},
             icon: const Icon(
               Icons.search,
               size: 30,
@@ -97,16 +95,22 @@ class _HomeScreenState extends State<HomeScreen> {
                           GestureDetector(
                             onTap: () {
                               print("Categories");
+                               Navigator.push(context , MaterialPageRoute(builder: (context) => const CategoriesList()));
                             },
-                            child: const SizedBox(
-                              height: 30,
-                              child: Text(
-                                "Categories",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500),
-                              ),
+                            child: const Row(
+                              children: [
+                                SizedBox(
+                                  height: 30,
+                                  child: Text(
+                                    "Categories",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                                Icon(Icons.arrow_drop_down,size: 25,color: Colors.white,)
+                              ],
                             ),
                           ),
                         ],

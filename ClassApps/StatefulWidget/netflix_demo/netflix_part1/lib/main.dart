@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_part1/Authentication/NetFlixLandingPage1.dart';
 import 'package:netflix_part1/Authentication/userSelection.dart';
-import 'package:netflix_part1/DashBoard/SearchBox.dart';
+import 'package:netflix_part1/DashBoard/CategoriesList.dart';
 import 'DashBoard/HomeScreen.dart';
 import "Authentication/NetFlixLandingPage2.dart";
 
