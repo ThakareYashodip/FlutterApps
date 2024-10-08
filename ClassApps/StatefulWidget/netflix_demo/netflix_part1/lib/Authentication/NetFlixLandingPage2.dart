@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_part1/Authentication/ReadyTOWatch.dart';
 import 'package:netflix_part1/Authentication/SignIn.dart';
-import 'package:netflix_part1/Authentication/userSelection.dart';
 
 
 class NetFlixLandingPage2 extends StatefulWidget {
