@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_part1/Authentication/SignIn.dart';
 
 class ReadyTowatch extends StatefulWidget{
   const ReadyTowatch({super.key});
@@ -51,12 +52,13 @@ class _ReadyToWatch extends State{
                   hintText: "Email",
                   hintStyle: const TextStyle(fontSize: 14, color: Colors.black45,fontFamily: "Montserrat"),
                 ),
+                style: const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
               ),
             ),
             const SizedBox(height: 20),
             GestureDetector(
               onTap: (){
-               // Navigator.push(context , MaterialPageRoute(builder: (context) => const )),
+               Navigator.push(context , MaterialPageRoute(builder: (context) => const SignIn()));
               },
               child: Container(
                 width: 320,

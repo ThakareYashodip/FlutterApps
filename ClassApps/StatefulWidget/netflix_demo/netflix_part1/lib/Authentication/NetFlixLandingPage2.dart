@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_part1/Authentication/ReadyTOWatch.dart';
+import 'package:netflix_part1/Authentication/SignIn.dart';
 import 'package:netflix_part1/Authentication/userSelection.dart';
 
 
@@ -49,7 +50,9 @@ class _NetFlixLandingPage2State extends State<NetFlixLandingPage2> {
               ),
               const SizedBox(width: 25,),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context , MaterialPageRoute(builder: (context) => const SignIn()));
+                },
                 child: const Text(
                   'Sign In',
                   style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: "Montserrat",fontWeight: FontWeight.w700),

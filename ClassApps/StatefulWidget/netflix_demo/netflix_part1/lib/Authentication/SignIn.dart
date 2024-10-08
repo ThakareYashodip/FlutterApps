@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_part1/Authentication/userSelection.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -19,7 +20,9 @@ class _SignInState extends State {
         title: Image.asset('assets/NetFlixLogo/Netflix02.png',height: 100,width: 150,),
         leading: Builder(builder: (BuildContext context){
           return IconButton(
-            onPressed: (){}, 
+            onPressed: (){
+              Navigator.pop(context);
+            }, 
             icon: const Icon(Icons.arrow_back_ios_rounded,size: 30,color: Colors.white,));
         },),
         backgroundColor: Colors.black,
@@ -29,6 +32,7 @@ class _SignInState extends State {
         width: MediaQuery.of(context).size.width,
         color: Colors.black,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 50,),
             SizedBox(
@@ -44,6 +48,7 @@ class _SignInState extends State {
                   hintText: "Email or phone number",
                   hintStyle: const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
                 ),
+                style: const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
               ),
             ),
             SizedBox(
@@ -58,20 +63,26 @@ class _SignInState extends State {
                   hintText: "Password",
                   hintStyle: const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
                 ),
+                style: const TextStyle(fontSize: 14, color: Colors.white,fontWeight: FontWeight.bold,fontFamily: "Montserrat"),
               ),
             ),
             const SizedBox(height: 20,),
-            Container(
-              width: 320,
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                border: Border.all(width: 2,color: Colors.white),
-                borderRadius: BorderRadius.circular(10)
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => const userSelection()));
+              },
+              child: Container(
+                width: 320,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  border: Border.all(width: 2,color: Colors.white),
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: const Center(
+                  child: Text("Sign In",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color:Colors.white,fontFamily: "Montserrat"),
+                ),),
               ),
-              child: const Center(
-                child: Text("Sign In",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color:Colors.white,fontFamily: "Montserrat"),
-              ),),
             ),
             const SizedBox(height: 40,),
             GestureDetector(
