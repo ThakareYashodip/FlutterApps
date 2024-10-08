@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../Resourcess/linksModule.dart';
+import 'package:netflix_part1/DashBoard/SearchBox.dart';
+import '../Resourcess/HomePageLinks.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,7 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
             letterSpacing: 5),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context , MaterialPageRoute(builder: (context) => const SearchBox()));
+            },
             icon: const Icon(
               Icons.search,
               size: 30,
