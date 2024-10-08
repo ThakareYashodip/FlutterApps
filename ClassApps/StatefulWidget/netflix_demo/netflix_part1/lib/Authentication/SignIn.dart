@@ -37,7 +37,7 @@ class _SignInState extends State {
             const SizedBox(height: 50,),
             SizedBox(
               width: 320,
-              height: 100,
+              height: 60,
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
