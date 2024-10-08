@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_part1/Authentication/NetFlixLandingPage1.dart';
 import 'package:netflix_part1/Authentication/ReadyTOWatch.dart';
+import 'package:netflix_part1/Authentication/SignIn.dart';
 import 'package:netflix_part1/Authentication/userSelection.dart';
 import 'package:netflix_part1/DashBoard/CategoriesList.dart';
 import 'package:netflix_part1/DashBoard/profilesAndMore.dart';
@@ -33,6 +34,6 @@ class NetFlix extends StatefulWidget {
 class _NetFlix extends State {
   @override
   Widget build(BuildContext context) {
-    return const ReadyTowatch();
+    return const SignIn();
   }
 }

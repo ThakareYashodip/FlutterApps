@@ -30,6 +30,7 @@ flutter:
     - assets\UserIcons\cartoon-man-with-blue-jacket-blue-jacket_983286-5842.avif
     - assets\UserIcons\boy-with-hoodie-that-says-hes-boy_1002151-24837.avif
     - assets\UserIcons\Netflix-avatar.png
+    - assets\NetFlixLogo\Netflix02.png
 
   fonts:
     - family: Montserrat
