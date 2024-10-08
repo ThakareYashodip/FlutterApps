@@ -9,6 +9,8 @@ class ReadyTowatch extends StatefulWidget{
 
 class _ReadyToWatch extends State{
 
+  TextEditingController emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

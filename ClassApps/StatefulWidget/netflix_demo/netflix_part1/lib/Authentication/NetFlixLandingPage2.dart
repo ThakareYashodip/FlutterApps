@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_part1/Authentication/ReadyTOWatch.dart';
 import 'package:netflix_part1/Authentication/userSelection.dart';
 
 
@@ -84,7 +85,7 @@ class _NetFlixLandingPage2State extends State<NetFlixLandingPage2> {
             GestureDetector(
               onTap: (){
                 print("GET STARTED");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => userSelection()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const ReadyTowatch()));
               },
               child: Container(
                 height: 50,
