@@ -8,6 +8,10 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State {
+
+  TextEditingController emailOrPhone = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
