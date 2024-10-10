@@ -54,7 +54,8 @@ class _LandingPage1State extends State<LandingPage1> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                      },
                       child: Container(
                         height: 60,
                         width: 150,

@@ -69,6 +69,7 @@
         'https://stat5.bollywoodhungama.in/wp-content/uploads/2021/07/Kakuda-3a-306x393.jpg'
       ]
     },
+    
     {
       'name': 'Suspenseful Movies ',
       'imageUrl':

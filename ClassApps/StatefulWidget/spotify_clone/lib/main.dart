@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/Authentication/ForgotPass.dart';
 import 'package:spotify_clone/Authentication/LandingPage1.dart';
 import 'package:spotify_clone/Authentication/LogInPage.dart';
+import 'package:spotify_clone/Authentication/SignUp.dart';
 
 void main() {
   runApp(const YashMusic());
@@ -29,6 +31,6 @@ class _Spotify extends State {
 
   @override
   Widget build(BuildContext context){
-    return const Loginpage();
+    return const LandingPage1();
   }
 }
