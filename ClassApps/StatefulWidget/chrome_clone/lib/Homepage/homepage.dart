@@ -119,7 +119,7 @@ List Newsheadlines = [
               Text(
                 "Google",
                 style: GoogleFonts.lato(
-                    fontSize: 50,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
@@ -138,6 +138,9 @@ List Newsheadlines = [
                     SizedBox(
                       width: 280,
                       child: TextField(
+                        style:  GoogleFonts.lato(
+                          fontSize: 16,color: Colors.white,
+                        ),
                         decoration: InputDecoration(
                             hintText: "Search or type URL",
                             hintStyle: GoogleFonts.lato(

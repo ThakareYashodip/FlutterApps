@@ -268,7 +268,7 @@ class MainApp extends StatelessWidget {
                     ),
                     ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: 10,
+                        itemCount: 8,
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
                           return Container(
@@ -309,7 +309,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -328,7 +329,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -347,7 +349,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -366,7 +369,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -442,7 +446,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -461,7 +466,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -480,7 +486,8 @@ class MainApp extends StatelessWidget {
                                         width: 50,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                         clipBehavior: Clip.antiAlias,
                                         child: Image.asset(
@@ -491,21 +498,20 @@ class MainApp extends StatelessWidget {
                                     GestureDetector(
                                       onTap: () {},
                                       child: Container(
-                                        margin: const EdgeInsets.only(
-                                            top: 10,
-                                            bottom: 5,
-                                            left: 20,
-                                            right: 20),
-                                        width: 50,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                        ),
-                                        clipBehavior: Clip.antiAlias,
-                                        child: Image.asset(
-                                            "assets/Images/KotakLogo.jpg",
-                                            fit: BoxFit.cover),
-                                      ),
+                                          margin: const EdgeInsets.only(
+                                              top: 10, left: 20, right: 20),
+                                          width: 50,
+                                          height: 50,
+                                          decoration: const BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.red,
+                                          ),
+                                          clipBehavior: Clip.antiAlias,
+                                          child: const Icon(
+                                            Icons.arrow_forward_ios_rounded,
+                                            color: Colors.white,
+                                            size: 25,
+                                          )),
                                     ),
                                   ],
                                 ),
@@ -549,12 +555,12 @@ class MainApp extends StatelessWidget {
                                     SizedBox(
                                       width: 70,
                                       child: Text(
-                                        'Pay your Contact',
+                                        'See more',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 10,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.black),
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.red),
                                       ),
                                     ),
                                   ],
@@ -599,12 +605,12 @@ class MainApp extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 70,
                           child: Text(
-                            'Pay your Contact',
+                            '${resources[0]['name']}',
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.white),
@@ -620,3 +626,53 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+List<Map> resources = [
+  {
+    'name': 'Bank',
+    'logo': ['assets/Images/KotakLogo.jpg'],
+    'description': [
+      'Kotak811',
+      'Account Overview',
+      'Account Activity',
+      'Statement',
+      'Fixed Deposits',
+      'Digital Rupee',
+      'Active Money',
+      'See More'
+    ]
+  },
+  {
+    'name': 'Pay & Transfer',
+    'logo': ['assets/Images/KotakLogo.jpg'],
+    'description': [
+      'Transfer Money',
+      'Bill Pay & Recharge',
+      'BHIM UPI',
+      'Scan Any QR',
+      'One Time Transfer',
+      'Pay your contact',
+      'Add/Manage Beneficiary',
+      'see more'
+    ],
+  },
+  {'name':'Loans',
+  'logo':['assets/Images/KotakLogo.jpg'],
+  'description':['Free Credit Cards','Loan and Card Offers','Personal Loan','Home Loan','Pay Day Loan','Consumer Durable loan','Pay Overdue EMI','See more']
+  },
+  {'name':'Cards',
+  'logo':['assets/Images/KotakLogo.jpg'],
+  'description':['Free Credit Cards','Loan and Card Offers','Personal Loan','Home Loan','Pay Day Loan','Consumer Durable loan','Pay Overdue EMI','See more']},
+  {'name':'Invest',
+  'logo':['assets/Images/KotakLogo.jpg'],
+  'description':['Free Credit Cards','Loan and Card Offers','Personal Loan','Home Loan','Pay Day Loan','Consumer Durable loan','Pay Overdue EMI','See more']},
+  {'name':'Apply Now',
+  'logo':['assets/Images/KotakLogo.jpg'],
+  'description':['Free Credit Cards','Loan and Card Offers','Personal Loan','Home Loan','Pay Day Loan','Consumer Durable loan','Pay Overdue EMI','See more']},
+  {'name':'Service Requests',
+  'logo':['assets/Images/KotakLogo.jpg'],
+  'description':['Free Credit Cards','Loan and Card Offers','Personal Loan','Home Loan','Pay Day Loan','Consumer Durable loan','Pay Overdue EMI','See more']},
+  {'name':'Insure',
+  'logo':['assets/Images/KotakLogo.jpg'],
+  'description':['Free Credit Cards','Loan and Card Offers','Personal Loan','Home Loan','Pay Day Loan','Consumer Durable loan','Pay Overdue EMI','See more']}
+];
