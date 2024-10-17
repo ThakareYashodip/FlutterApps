@@ -31,6 +31,6 @@ class Travel_Buddy extends StatefulWidget {
 class __Travel_BuddyState extends State<Travel_Buddy> {
   @override
   Widget build(BuildContext context) {
-    return const Page2();
+    return const Page1();
   }
 }
