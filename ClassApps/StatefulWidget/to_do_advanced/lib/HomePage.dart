@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                   style: GoogleFonts.quicksand(
                     fontSize: 11,
                     fontWeight: FontWeight.w400,
-                    color: Color.fromRGBO(89, 57, 241, 1),
+                    color: const Color.fromARGB(255, 42, 77, 235),
                   ),
                 ),
                 TextField(
@@ -323,12 +323,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(89, 57, 241, 1), width: 0.5),
+                          color: const Color.fromARGB(255, 42, 77, 235), width: 0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(89, 57, 241, 1), width: 0.5),
+                          color: const Color.fromARGB(255, 42, 77, 235), width: 0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -342,7 +342,7 @@ class _HomePageState extends State<HomePage> {
                   style: GoogleFonts.quicksand(
                     fontSize: 11,
                     fontWeight: FontWeight.w400,
-                    color: Color.fromRGBO(89, 57, 241, 1),
+                    color: const Color.fromARGB(255, 42, 77, 235),
                   ),
                 ),
                 TextField(
@@ -357,12 +357,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(89, 57, 241, 1), width: 0.5),
+                          color: const Color.fromARGB(255, 42, 77, 235), width: 0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(89, 57, 241, 1), width: 0.5),
+                          color: const Color.fromARGB(255, 42, 77, 235), width: 0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -376,7 +376,7 @@ class _HomePageState extends State<HomePage> {
                   style: GoogleFonts.quicksand(
                     fontSize: 11,
                     fontWeight: FontWeight.w400,
-                    color: Color.fromRGBO(89, 57, 241, 1),
+                    color: const Color.fromARGB(255, 42, 77, 235),
                   ),
                 ),
                 TextField(
@@ -400,12 +400,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(89, 57, 241, 1), width: 0.5),
+                          color: const Color.fromARGB(255, 42, 77, 235), width: 0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(89, 57, 241, 1), width: 0.5),
+                          color: const Color.fromARGB(255, 42, 77, 235), width: 0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     suffixIcon: Icon(
@@ -428,7 +428,7 @@ class _HomePageState extends State<HomePage> {
                       width: 300,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(89, 57, 241, 1),
+                        color: const Color.fromARGB(255, 42, 77, 235),
                       ),
                       child: Center(
                         child: Text(
