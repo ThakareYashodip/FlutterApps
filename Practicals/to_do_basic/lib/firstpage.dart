@@ -55,7 +55,7 @@ class __Basic_To_doState extends State<Basic_To_do> {
                         color: Color.fromRGBO(199, 199, 199, 1),
                       ),
                       clipBehavior: Clip.antiAlias,
-                      child: Image.network('https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png',fit: BoxFit.cover,),
+                      child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-TVphB148wg1omRxgqXTMk9lDbLyunCmdw&s",fit: BoxFit.cover,),
                     ),
                     Expanded(
                       child: SizedBox(
@@ -144,9 +144,9 @@ class __Basic_To_doState extends State<Basic_To_do> {
   void bottomSheet(bool flag,[Todomodel? todoModel]) {
     showModalBottomSheet(
       sheetAnimationStyle: AnimationStyle(
-        duration: const Duration(milliseconds: 1500),
-        curve: Curves.bounceInOut,
-        reverseDuration: const Duration(milliseconds: 1500),
+        // duration: const Duration(milliseconds: 1500),
+        // curve: Curves.bounceInOut,
+        // reverseDuration: const Duration(milliseconds: 1500),
       ),
       isScrollControlled: true,
       context: context,
