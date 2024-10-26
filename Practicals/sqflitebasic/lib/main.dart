@@ -33,14 +33,18 @@ void main() async {
   insertPlayerData(obj2);
 
   print( await getDatabasesPath());
-  print(await getPlayerData());
+  print(await getPlayerData(obj1.jerNo));
+  print(await getPlayerData(obj2.jerNo));
 
   obj1 = Player(pName: "${obj1.pName} Kohli", jerNo: obj1.jerNo, avg: obj1.avg, runs: obj1.runs+10);
   updateData(obj1);
-  print(await getPlayerData());
+  print(await getPlayerData(obj1.jerNo));
+  print(await getPlayerData(obj2.jerNo));
 
   deleteData(obj1);
-  print(await getPlayerData());
+  
+  print(await getPlayerData(obj1.jerNo));
+  print(await getPlayerData(obj2.jerNo));
 }
 
 // Insert data
@@ -55,10 +59,10 @@ void insertPlayerData(Player obj) async {
 
 // Retrive Data
 
-Future<List<Map<String, dynamic>>> getPlayerData() async {
+Future<List<Map<String, dynamic>>> getPlayerData(int jerNo) async {
   Database localDB = await database;
 
-  List<Map<String, dynamic>> playerData = await localDB.query("Player");
+  List<Map<String, dynamic>> playerData = await localDB.query("Player",columns: ['jerNo','pName'],where: 'jerNo = ?',whereArgs: [jerNo]);
 
   return playerData;
 }
