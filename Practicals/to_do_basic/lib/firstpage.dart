@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:to_do_basic/ToDoModel.dart';
+import 'package:to_do_basic/main.dart';
 
 class Basic_To_do extends StatefulWidget {
   const Basic_To_do({super.key});
@@ -11,9 +11,7 @@ class Basic_To_do extends StatefulWidget {
   State<Basic_To_do> createState() => __Basic_To_doState();
 }
 
-// ignore: camel_case_types
 class __Basic_To_doState extends State<Basic_To_do> {
-
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController dateController = TextEditingController();
@@ -35,7 +33,7 @@ class __Basic_To_doState extends State<Basic_To_do> {
         itemBuilder: (BuildContext context, int index) {
           return Container(
             margin:
-              const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+                const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
             width: 330,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -55,7 +53,10 @@ class __Basic_To_doState extends State<Basic_To_do> {
                         color: Color.fromRGBO(199, 199, 199, 1),
                       ),
                       clipBehavior: Clip.antiAlias,
-                      child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-TVphB148wg1omRxgqXTMk9lDbLyunCmdw&s",fit: BoxFit.cover,),
+                      child: Image.network(
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-TVphB148wg1omRxgqXTMk9lDbLyunCmdw&s",
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Expanded(
                       child: SizedBox(
@@ -85,7 +86,8 @@ class __Basic_To_doState extends State<Basic_To_do> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                   child: Row(
                     children: [
                       Text(
@@ -98,27 +100,36 @@ class __Basic_To_doState extends State<Basic_To_do> {
                       ),
                       const Spacer(),
                       GestureDetector(
-                        onTap: (){
+                          onTap: () {
+                            titleController.text = todoCards[index].title;
+                            descriptionController.text =
+                                todoCards[index].description;
+                            dateController.text = todoCards[index].date;
 
-                          titleController.text = todoCards[index].title;
-                          descriptionController.text =  todoCards[index].description;
-                          dateController.text = todoCards[index].date;
-
-                          bottomSheet(true,todoCards[index]); //object return from specific index
-                          setState(() {});
-                        },
-                        child: Icon(Icons.edit,size: 15,color: Colors.black,)
-                      ),
+                            bottomSheet(
+                                true,
+                                todoCards[
+                                    index]); //object return from specific index
+                            setState(() {});
+                          },
+                          child: Icon(
+                            Icons.edit,
+                            size: 15,
+                            color: Colors.black,
+                          )),
                       const SizedBox(
                         width: 20,
                       ),
                       GestureDetector(
-                        onTap: (){
-                          todoCards.remove(todoCards[index]);
-                          setState(() {});
-                        },
-                        child: Icon(Icons.delete_outline,size: 15,color: Colors.black,)
-                      ),
+                          onTap: () {
+                            todoCards.remove(todoCards[index]);
+                            setState(() {});
+                          },
+                          child: Icon(
+                            Icons.delete_outline,
+                            size: 15,
+                            color: Colors.black,
+                          )),
                     ],
                   ),
                 ),
@@ -141,13 +152,13 @@ class __Basic_To_doState extends State<Basic_To_do> {
     );
   }
 
-  void bottomSheet(bool flag,[Todomodel? todoModel]) {
+  void bottomSheet(bool flag, [Todomodel? todoModel]) {
     showModalBottomSheet(
       sheetAnimationStyle: AnimationStyle(
-        // duration: const Duration(milliseconds: 1500),
-        // curve: Curves.bounceInOut,
-        // reverseDuration: const Duration(milliseconds: 1500),
-      ),
+          // duration: const Duration(milliseconds: 1500),
+          // curve: Curves.bounceInOut,
+          // reverseDuration: const Duration(milliseconds: 1500),
+          ),
       isScrollControlled: true,
       context: context,
       builder: (context) {
@@ -302,10 +313,10 @@ class __Basic_To_doState extends State<Basic_To_do> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      if(flag == false){
+                      if (flag == false) {
                         submit(false);
-                      }else{
-                        submit(true,todoModel);
+                      } else {
+                        submit(true, todoModel);
                       }
                     },
                     child: Container(
@@ -335,11 +346,9 @@ class __Basic_To_doState extends State<Basic_To_do> {
         );
       },
     );
-    
+
     setState(() {});
   }
-
-  
 
   Color? colorChange(int index) {
     if (index % 4 == 0) {
@@ -351,28 +360,31 @@ class __Basic_To_doState extends State<Basic_To_do> {
     } else {
       return const Color.fromRGBO(250, 232, 250, 1);
     }
-  } 
-
-  void submit(bool flag,[Todomodel? todoObj]) {
-    
-    if(titleController.text.trim().isNotEmpty && descriptionController.text.trim().isNotEmpty && dateController.text.trim().isNotEmpty){
-      if(flag == false){
-        todoCards.add(
-          Todomodel(title: titleController.text, description: descriptionController.text, date: dateController.text)
-        );
-      }
-      else{
-        todoObj!.title = titleController.text; 
-        todoObj.description= descriptionController.text; 
-        todoObj.date = dateController.text; 
-      }
-    }
-
-    textClear();
-    Navigator.of(context).pop();
-    setState(() {
-    });
   }
+
+  Future<void> submit(bool flag, [Todomodel? todoObj]) async {
+  if (titleController.text.trim().isNotEmpty &&
+      descriptionController.text.trim().isNotEmpty &&
+      dateController.text.trim().isNotEmpty) {
+    if (flag == false) {
+      Todomodel newTodo = Todomodel(
+        title: titleController.text,
+        description: descriptionController.text,
+        date: dateController.text,
+      );
+      insertUserData(newTodo); 
+      todoCards.add(newTodo);
+    } else {
+      todoObj!.title = titleController.text;
+      todoObj.description = descriptionController.text;
+      todoObj.date = dateController.text;
+    }
+  }
+
+  textClear();
+  Navigator.of(context).pop();
+  setState(() {});
+}
 
   void textClear() {
     titleController.clear();

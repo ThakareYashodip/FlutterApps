@@ -6,4 +6,12 @@ class Todomodel {
   String date;
 
   Todomodel({required this.title,required this.description,required this.date});
+
+  Map<String,dynamic> userData() {
+    return {
+      'title': title,
+      'description': description,
+      'date' : date,
+    };
+  }
 }
