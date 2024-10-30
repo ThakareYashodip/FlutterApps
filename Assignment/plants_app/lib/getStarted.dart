@@ -17,7 +17,6 @@ class _GetStarted extends State {
         toolbarHeight: 40,
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
               height: 450,
@@ -44,20 +43,30 @@ class _GetStarted extends State {
               ],
             ),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Container(
-            width: MediaQuery.of(context).size.width-50,
-            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+            width: MediaQuery.of(context).size.width - 50,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: const LinearGradient(colors: [
-                Color.fromRGBO(124, 180, 70, 1),
-                Color.fromRGBO(62, 102, 24, 1) , 
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              )
-            ),
+                boxShadow: const <BoxShadow>[
+                  BoxShadow(
+                    offset: Offset(0, 20),
+                    blurRadius: 40,
+                    color: Color.fromRGBO(0, 0, 0, 0.15),
+                    blurStyle: BlurStyle.outer
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(10),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color.fromRGBO(124, 180, 70, 1),
+                    Color.fromRGBO(62, 102, 24, 1),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                )),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -68,9 +77,15 @@ class _GetStarted extends State {
                     fontWeight: FontWeight.w600,
                     color: const Color.fromRGBO(255, 255, 255, 1),
                   ),
-                  ),
-                  const SizedBox(width: 10,),
-                  const Icon(Icons.arrow_forward_ios_rounded,color: Color.fromRGBO(255, 255, 255, 1),size: 22,),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Color.fromRGBO(255, 255, 255, 1),
+                  size: 22,
+                ),
               ],
             ),
           ),
