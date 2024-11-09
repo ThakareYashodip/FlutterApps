@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plants_app/home.dart';
 import 'package:plants_app/loginPage.dart';
 import 'package:plants_app/verification.dart';
 import './getStarted.dart';
@@ -14,7 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Verification(),
+      home: GetStarted(),
     );
   }
 }

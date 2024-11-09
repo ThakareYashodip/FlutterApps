@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plants_app/home.dart';
 
 class Verification extends StatefulWidget {
   const Verification({super.key});
@@ -66,7 +67,7 @@ class _VerificationState extends State<Verification> {
                       decoration: const BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                              offset: Offset(0, 8),
+                              offset: Offset(0, 4),
                               blurRadius: 20,
                               color: Color.fromRGBO(0, 0, 0, 0.06),
                               blurStyle: BlurStyle.outer),
@@ -97,7 +98,7 @@ class _VerificationState extends State<Verification> {
                       height: 56,
                       decoration: const BoxDecoration(boxShadow: <BoxShadow>[
                         BoxShadow(
-                            offset: Offset(0, 8),
+                            offset: Offset(0, 4),
                             blurRadius: 20,
                             color: Color.fromRGBO(0, 0, 0, 0.06),
                             blurStyle: BlurStyle.outer),
@@ -127,7 +128,7 @@ class _VerificationState extends State<Verification> {
                       height: 56,
                       decoration: const BoxDecoration(boxShadow: <BoxShadow>[
                         BoxShadow(
-                            offset: Offset(0, 8),
+                            offset: Offset(0, 4),
                             blurRadius: 20,
                             color: Color.fromRGBO(0, 0, 0, 0.06),
                             blurStyle: BlurStyle.outer),
@@ -157,7 +158,7 @@ class _VerificationState extends State<Verification> {
                       height: 56,
                       decoration: const BoxDecoration(boxShadow: <BoxShadow>[
                         BoxShadow(
-                            offset: Offset(0, 8),
+                            offset: Offset(0, 4),
                             blurRadius: 20,
                             color: Color.fromRGBO(0, 0, 0, 0.06),
                             blurStyle: BlurStyle.outer),
@@ -212,43 +213,48 @@ class _VerificationState extends State<Verification> {
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-            width: MediaQuery.of(context).size.width - 50,
-            height: 50,
-            // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            margin: const EdgeInsets.only(top: 30),
-            decoration: BoxDecoration(
-                boxShadow: const <BoxShadow>[
-                  BoxShadow(
-                    offset: Offset(0, 20),
-                    blurRadius: 40,
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    blurStyle: BlurStyle.outer
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(10),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(124, 180, 70, 1),
-                    Color.fromRGBO(62, 102, 24, 1),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => const Home()));
+                  },
+                  child: Container(
+                              width: MediaQuery.of(context).size.width - 50,
+                              height: 50,
+                              // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                              margin: const EdgeInsets.only(top: 30),
+                              decoration: BoxDecoration(
+                  boxShadow: const <BoxShadow>[
+                    BoxShadow(
+                      offset: Offset(0, 4),
+                      blurRadius: 40,
+                      color: Color.fromRGBO(0, 0, 0, 0.15),
+                      blurStyle: BlurStyle.outer
+                    ),
                   ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                )),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Submit",
-                  style: GoogleFonts.rubik(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: const Color.fromRGBO(255, 255, 255, 1),
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color.fromRGBO(124, 180, 70, 1),
+                      Color.fromRGBO(62, 102, 24, 1),
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  )),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                  Text(
+                    "Submit",
+                    style: GoogleFonts.rubik(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromRGBO(255, 255, 255, 1),
+                    ),
                   ),
+                                ],
+                              ),
+                            ),
                 ),
-              ],
-            ),
-          ),
               ],
             ),
           ),

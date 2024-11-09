@@ -66,9 +66,9 @@ class _assignment_to_doState extends State<assignment_to_do> {
           ),
           GestureDetector(
             onTap: (){
-                infoList.add({"name":nameController.text,"cName":cmpNameController.text});
-                nameController.clear();
-                cmpNameController.clear();
+                // infoList.add({"name":nameController.text,"cName":cmpNameController.text});
+                // nameController.clear();
+                // cmpNameController.clear();
               setState(() {});
             },
             child: Container(

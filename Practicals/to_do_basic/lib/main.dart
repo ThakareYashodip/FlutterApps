@@ -54,6 +54,7 @@ Future<Database> openMyDatabase() async {
     Database localDb = await database;
     await localDb.insert("todoUser ", obj.userData(), conflictAlgorithm: ConflictAlgorithm.replace);
     print('Inserted: ${obj.userData()}');
+    getUserData();
   } catch (e) {
     print('Error inserting data: $e');
   }
@@ -61,9 +62,12 @@ Future<Database> openMyDatabase() async {
 
   Future<List<Map<String,dynamic>>> getUserData() async {
     Database localDb = await database ;
+    final List<Map<String,dynamic>> data = [];
 
-    List<Map<String,dynamic>> userDataBase =  await localDb.query("todoUser");
-    return userDataBase ;
+     await localDb.query("todoUser").then((value){
+      data.addAll(value);
+     });
+     return data;
   }
 
   Future<void> updateUserData(Todomodel obj) async {
@@ -81,7 +85,6 @@ class _ToDoAppState extends State<ToDoApp> {
 
   void initState(){
     super.initState();
-    openMyDatabase();
   }
 
   @override

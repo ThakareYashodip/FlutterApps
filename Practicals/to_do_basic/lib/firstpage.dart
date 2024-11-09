@@ -15,7 +15,19 @@ class __Basic_To_doState extends State<Basic_To_do> {
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
   TextEditingController dateController = TextEditingController();
+  List<Map<String,dynamic>> data = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _fetchList();
+  }
 
+  void _fetchList()async{
+    await getUserData().then((value) {
+      data.addAll(value);
+    });
+  } 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
