@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 
+import 'playerInfo.dart';
+import 'registerUI.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
