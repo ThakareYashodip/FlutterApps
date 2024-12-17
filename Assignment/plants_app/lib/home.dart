@@ -14,7 +14,8 @@ class _HomeState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 40,
+        automaticallyImplyLeading: false,
+        toolbarHeight: 20,
         backgroundColor: const Color.fromRGBO(123, 123, 123, 1),
       ),
       body: Column(
@@ -48,7 +49,8 @@ class _HomeState extends State {
                   ],
                 ),
                 child: const Center(
-                  child: Icon(Icons.shopping_bag_outlined,color: Color.fromRGBO(62, 102, 24, 1)),
+                  child: Icon(Icons.shopping_bag_outlined,
+                      color: Color.fromRGBO(62, 102, 24, 1)),
                 ),
               ),
             ],
@@ -72,7 +74,8 @@ class _HomeState extends State {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 10),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20.0, horizontal: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -119,111 +122,123 @@ class _HomeState extends State {
           //Nested Listview
           Expanded(
             child: ListView.builder(
-              itemCount: 5,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Indoor",
-                      style: GoogleFonts.poppins(
-                        color: const Color.fromRGBO(0, 0, 0, 1),
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 220,
-                      child: ListView.builder(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder:(context, index) {
-                          return Container(
-                          width: 141,
-                          height: 170,
-                          margin: const EdgeInsets.only(top: 15, bottom: 15 , right: 20),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: const [
-                              BoxShadow(
-                                  blurRadius: 16.1,
-                                  color: Color.fromRGBO(0, 0, 0, 0.15),
-                                  offset: Offset(0, 4),
-                                  blurStyle: BlurStyle.outer),
-                            ],
+                itemCount: 5,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Indoor",
+                          style: GoogleFonts.poppins(
+                            color: const Color.fromRGBO(0, 0, 0, 1),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 24,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Center(
-                                    child:
-                                        Image.asset("assets/PlantsContainer.png")),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  "Snake Plants",
-                                  style: GoogleFonts.dmSans(
-                                    color: const Color.fromRGBO(48, 48, 48, 1),
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
+                        ),
+                        SizedBox(
+                          height: 220,
+                          child: ListView.builder(
+                              itemCount: 5,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                  width: 141,
+                                  height: 170,
+                                  margin: const EdgeInsets.only(
+                                      top: 15, bottom: 15, right: 20),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          blurRadius: 16.1,
+                                          color: Color.fromRGBO(0, 0, 0, 0.15),
+                                          offset: Offset(0, 4),
+                                          blurStyle: BlurStyle.outer),
+                                    ],
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "₹350",
-                                      style: GoogleFonts.poppins(
-                                        color: const Color.fromRGBO(62, 102, 24, 1),
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 17,
-                                      ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Center(
+                                            child: Image.asset(
+                                                "assets/PlantsContainer.png")),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          "Snake Plants",
+                                          style: GoogleFonts.dmSans(
+                                            color: const Color.fromRGBO(
+                                                48, 48, 48, 1),
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "₹350",
+                                              style: GoogleFonts.poppins(
+                                                color: const Color.fromRGBO(
+                                                    62, 102, 24, 1),
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 17,
+                                              ),
+                                            ),
+                                            const Spacer(),
+                                            Container(
+                                              height: 26,
+                                              width: 26,
+                                              decoration: const BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Color.fromRGBO(
+                                                    237, 238, 235, 1),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                      blurRadius: 16.1,
+                                                      color: Color.fromRGBO(
+                                                          237, 238, 235, 1),
+                                                      offset: Offset(0, 4),
+                                                      blurStyle:
+                                                          BlurStyle.outer),
+                                                ],
+                                              ),
+                                              child: const Center(
+                                                  child: Icon(
+                                                Icons.shopping_bag_outlined,
+                                                color:
+                                                    Color.fromRGBO(0, 0, 0, 1),
+                                                size: 20,
+                                              )),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
-                                    const Spacer(),
-                                    Container(
-                                      height: 26,
-                                      width: 26,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Color.fromRGBO(237, 238, 235, 1),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              blurRadius: 16.1,
-                                              color: Color.fromRGBO(237, 238, 235, 1),
-                                              offset: Offset(0, 4),
-                                              blurStyle: BlurStyle.outer),
-                                        ],
-                                      ),
-                                      child: const Center(child: Icon(Icons.shopping_bag_outlined,color: Color.fromRGBO(0,0,0,1),size: 20,)),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                        }
-                      ),
+                                  ),
+                                );
+                              }),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Divider(
+                          thickness: 1,
+                          color: Color.fromRGBO(204, 211, 196, 1),
+                        ),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Divider(
-                      thickness: 1,
-                      color: Color.fromRGBO(204, 211, 196, 1),
-                    ),
-                  ],
-                ),
-              );
-            }),
+                  );
+                }),
           ),
         ],
       ),

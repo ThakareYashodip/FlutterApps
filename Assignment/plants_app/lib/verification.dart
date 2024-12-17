@@ -14,7 +14,8 @@ class _VerificationState extends State<Verification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 40,
+        toolbarHeight: 20,
+        automaticallyImplyLeading: false,
         backgroundColor: const Color.fromRGBO(123, 123, 123, 1),
       ),
       body: Column(
@@ -24,7 +25,9 @@ class _VerificationState extends State<Verification> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   icon: const Icon(Icons.arrow_back_outlined)),
               const Spacer(),
               Image.asset("assets/LoginPage.png"),
@@ -214,46 +217,46 @@ class _VerificationState extends State<Verification> {
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => const Home()));
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Home()));
                   },
                   child: Container(
-                              width: MediaQuery.of(context).size.width - 50,
-                              height: 50,
-                              // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                              margin: const EdgeInsets.only(top: 30),
-                              decoration: BoxDecoration(
-                  boxShadow: const <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 4),
-                      blurRadius: 40,
-                      color: Color.fromRGBO(0, 0, 0, 0.15),
-                      blurStyle: BlurStyle.outer
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color.fromRGBO(124, 180, 70, 1),
-                      Color.fromRGBO(62, 102, 24, 1),
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  )),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                  Text(
-                    "Submit",
-                    style: GoogleFonts.rubik(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: const Color.fromRGBO(255, 255, 255, 1),
+                    width: MediaQuery.of(context).size.width - 50,
+                    height: 50,
+                    // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    margin: const EdgeInsets.only(top: 30),
+                    decoration: BoxDecoration(
+                        boxShadow: const <BoxShadow>[
+                          BoxShadow(
+                              offset: Offset(0, 4),
+                              blurRadius: 40,
+                              color: Color.fromRGBO(0, 0, 0, 0.15),
+                              blurStyle: BlurStyle.outer),
+                        ],
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color.fromRGBO(124, 180, 70, 1),
+                            Color.fromRGBO(62, 102, 24, 1),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        )),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Submit",
+                          style: GoogleFonts.rubik(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: const Color.fromRGBO(255, 255, 255, 1),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                                ],
-                              ),
-                            ),
                 ),
               ],
             ),

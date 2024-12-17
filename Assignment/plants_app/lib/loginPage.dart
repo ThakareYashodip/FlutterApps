@@ -14,7 +14,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 40,
+        automaticallyImplyLeading: false,
+        toolbarHeight: 20,
         backgroundColor: const Color.fromRGBO(102, 101, 101, 1),
       ),
       body: Column(
@@ -76,8 +77,11 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           GestureDetector(
-            onTap: (){
-              Navigator.push(context,MaterialPageRoute(builder: (context) => const Verification()));
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Verification()));
             },
             child: Container(
               width: MediaQuery.of(context).size.width - 50,
@@ -87,11 +91,10 @@ class _LoginPageState extends State<LoginPage> {
               decoration: BoxDecoration(
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
-                      offset: Offset(0, 4),
-                      blurRadius: 40,
-                      color: Color.fromRGBO(0, 0, 0, 0.15),
-                      blurStyle: BlurStyle.outer
-                    ),
+                        offset: Offset(0, 4),
+                        blurRadius: 40,
+                        color: Color.fromRGBO(0, 0, 0, 0.15),
+                        blurStyle: BlurStyle.outer),
                   ],
                   borderRadius: BorderRadius.circular(10),
                   gradient: const LinearGradient(

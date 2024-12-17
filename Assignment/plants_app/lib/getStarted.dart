@@ -15,7 +15,7 @@ class _GetStarted extends State {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(123, 123, 123, 1),
-        toolbarHeight: 40,
+        toolbarHeight: 20,
       ),
       body: Column(
         children: [
@@ -48,8 +48,9 @@ class _GetStarted extends State {
             height: 20,
           ),
           GestureDetector(
-            onTap: (){
-              Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginPage()));
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()));
             },
             child: Container(
               width: MediaQuery.of(context).size.width - 50,
@@ -57,11 +58,10 @@ class _GetStarted extends State {
               decoration: BoxDecoration(
                   boxShadow: const <BoxShadow>[
                     BoxShadow(
-                      offset: Offset(0,4),
-                      blurRadius: 40,
-                      color: Color.fromRGBO(0, 0, 0, 0.15),
-                      blurStyle: BlurStyle.outer
-                    ),
+                        offset: Offset(0, 4),
+                        blurRadius: 40,
+                        color: Color.fromRGBO(0, 0, 0, 0.15),
+                        blurStyle: BlurStyle.outer),
                   ],
                   borderRadius: BorderRadius.circular(10),
                   gradient: const LinearGradient(

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'controller.dart';
 import 'playerModel.dart';
 
 
@@ -17,22 +18,23 @@ class _PlayersInfoState extends State<PlayersInfo> {
   List<PlayerModel> playersList = [];
   final ImagePicker _imagePicker = ImagePicker();
   XFile? _selectedFile;
+  List<Map<String,dynamic>> data = [];
 
   void _submitPlayer() {
     // Add player to the list
     String playerName = playerNameTextController.text.trim();
     String jerseyNo = jerseyNoTextController.text.trim();
     
-    if (playerName.isNotEmpty && jerseyNo.isNotEmpty) {
+    if (playerName.trim().isNotEmpty && jerseyNo.trim().isNotEmpty) {
       PlayerModel newPlayer = PlayerModel(
         playerName: playerName,
         jerseyNo: jerseyNo,
         link: "https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png", // Default image link
       );
-
-      setState(() {
-        playersList.add(newPlayer);
-      });
+      Controller().addData(playerName,newPlayer.toMap());
+      // setState(() {
+      //   playersList.add(newPlayer);
+      // });
 
       // Clear the text fields
       playerNameTextController.clear();
@@ -40,9 +42,11 @@ class _PlayersInfoState extends State<PlayersInfo> {
     }
   }
 
-  void _displayPlayers() {
-    // Logic to display players is already handled by the ListView.builder
-    // This function can be used if you need to perform additional actions
+  void _displayPlayers()async {
+    data = [];
+    await Controller().readData().then((value){
+      data.addAll(value);
+    });
     setState(() {});
   }
 
@@ -146,7 +150,7 @@ class _PlayersInfoState extends State<PlayersInfo> {
           const SizedBox(height: 10),
           Expanded(
             child: ListView.builder(
-              itemCount: playersList.length,
+              itemCount: data.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Container(
@@ -165,7 +169,7 @@ class _PlayersInfoState extends State<PlayersInfo> {
                           color: Colors.grey,
                         ),
                         child: Image.network(
-                          playersList[index].link,
+                          data[index]["link"],
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
@@ -177,12 +181,12 @@ class _PlayersInfoState extends State<PlayersInfo> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Player Name: ${playersList[index].playerName}",
+                              "Player Name: ${data[index]["jerseyNo"]}",
                               style: const TextStyle(fontSize: 18),
                             ),
                             const SizedBox(height: 10),
                             Text(
-                              "Jersey No: ${playersList[index].jerseyNo}",
+                              "Jersey No: ${data[index]["playerName"]}",
                               style: const TextStyle(fontSize: 18),
                             ),
                           ],
