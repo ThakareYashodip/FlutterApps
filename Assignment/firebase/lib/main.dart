@@ -1,14 +1,24 @@
-import 'package:firebase/FirebaseLearning/dashboard.dart';
-import 'package:firebase/FirebaseLearning/login.dart';
-import 'package:firebase/Recipes/UI/SplashScreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase/Flight_Finder_App/Views/Essential/Custom.dart';
+import 'package:firebase/Flight_Finder_App/Views/Essential/MyController.dart';
+import 'package:firebase/Responsive_portfolio/View/dashboard_portfolio.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MainApp());
+  Get.lazyPut(() => MyController());
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+        apiKey: 'AIzaSyCEbjt7yNkLPG94n8q-ZmpdO3JpSUvL2Yc',
+        appId: '1:419259127964:android:f828162ba4ce86971f3559',
+        projectId: 'flutter-firebase-9fbe2',
+        messagingSenderId: '419259127964',
+        storageBucket: 'flutter-firebase-9fbe2.firebasestorage.app'),
+  );
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -16,12 +26,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'RecipesAPI',
-      debugShowCheckedModeBanner: false,
+    Utilities.init(context);
+    return GetMaterialApp(
+      title: 'Portfolio',
       darkTheme: ThemeData.dark(),
-      theme: ThemeData.light(),
-      home: const SplashScreen(),
+      debugShowCheckedModeBanner: false,
+      home: const DashBoardPortfolio(),
     );
   }
 }

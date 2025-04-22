@@ -14,9 +14,9 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   TextEditingController nameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   TextEditingController rePasswordController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   bool _isObscure = true;
 
   @override
@@ -24,7 +24,7 @@ class _SignUpState extends State<SignUp> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    _signUp(String userName, String emailId, String password) async {
+    signUp(String userName, String emailId, String password) async {
       try {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: emailId, password: password);
@@ -244,8 +244,11 @@ class _SignUpState extends State<SignUp> {
                         // Perform login logic
                         if (rePasswordController.text ==
                             _passwordController.text) {
-                          _signUp(nameController.text, _emailController.text,
+                          signUp(nameController.text, _emailController.text,
                               _passwordController.text);
+                          nameController.clear();
+                          _emailController.clear();
+                          _passwordController.clear();
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Signing up...'),

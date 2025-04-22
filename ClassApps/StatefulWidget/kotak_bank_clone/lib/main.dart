@@ -618,7 +618,7 @@ class MainApp extends StatelessWidget {
                         ),
                       ],
                     );
-                  }),
+                  },),
             ),
           ],
         ),

@@ -16,8 +16,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   bool _isObscure = true;
 
   @override
@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    Future<UserCredential?> _login(String emailID, String password) async {
+    Future<UserCredential?> login(String emailID, String password) async {
       try {
         UserCredential userCredential =
             await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -119,10 +119,15 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: _emailController,
+                      style: const TextStyle(color: Colors.black),
                       decoration: InputDecoration(
                         fillColor: Colors.purple[200],
                         hintText: "example@gmail.com",
                         hintStyle: const TextStyle(color: Colors.black38),
+                        prefixIcon: const Icon(
+                          Icons.email_outlined,
+                          color: Colors.black,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -149,9 +154,14 @@ class _LoginPageState extends State<LoginPage> {
                       controller: _passwordController,
                       obscureText: _isObscure,
                       maxLength: 12,
+                      style: const TextStyle(color: Colors.black),
                       decoration: InputDecoration(
                         hintText: "* * * * * * * * * * * * * *",
                         hintStyle: const TextStyle(color: Colors.black38),
+                        prefixIcon: const Icon(
+                          Icons.password,
+                          color: Colors.black,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -160,6 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                             _isObscure
                                 ? Icons.visibility_off
                                 : Icons.visibility,
+                            color: Colors.black,
                           ),
                           onPressed: () {
                             setState(() {
@@ -184,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             // Perform login logic
-                            _login(_emailController.text,
+                            login(_emailController.text,
                                 _passwordController.text);
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(

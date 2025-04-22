@@ -1,4 +1,5 @@
 import 'package:firebase_employee_app/C2W_E-Commerse-App/View/Essentials.dart';
+import 'package:firebase_employee_app/C2W_E-Commerse-App/View/checkoutPage.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPageE_Commerse extends StatefulWidget {
@@ -154,7 +155,12 @@ class _DetailsPageE_CommerseState extends State<DetailsPageE_Commerse> {
                     color: Colors.black,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const CheckoutEcommerse()));
+                    },
                     child: Container(
                       height: 60,
                       width: 150,

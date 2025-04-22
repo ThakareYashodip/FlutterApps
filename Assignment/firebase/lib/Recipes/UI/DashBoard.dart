@@ -1,5 +1,6 @@
 import 'package:firebase/Recipes/Services/ApiServices.dart';
 import 'package:firebase/Recipes/Services/Recipes_model.dart';
+import 'package:firebase/Recipes/UI/RecipeDetails.dart';
 import 'package:flutter/material.dart';
 
 class RecipeDashBoard extends StatefulWidget {
@@ -38,14 +39,26 @@ class _RecipeDashBoardState extends State<RecipeDashBoard> {
               padding: const EdgeInsets.all(8.0),
               child: Stack(
                 children: [
-                  Container(
-                    height: 250,
-                    margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: NetworkImage(recipes.image),
-                        fit: BoxFit.fill,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => Recipedetails(
+                            index: index,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 250,
+                      margin: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: NetworkImage(recipes.image),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
