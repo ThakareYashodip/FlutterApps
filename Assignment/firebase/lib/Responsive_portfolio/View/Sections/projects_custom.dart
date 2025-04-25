@@ -1,8 +1,6 @@
 import 'package:animate_on_hover/animate_on_hover.dart';
 import 'package:firebase/Responsive_portfolio/ResponsivePortfollio/responsive_font_size.dart';
-import 'package:firebase/Responsive_portfolio/Services/Project/project_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProjectsCustom extends StatelessWidget {
@@ -10,7 +8,6 @@ class ProjectsCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final projectController = Get.put(ProjectController());
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
@@ -62,6 +59,7 @@ class ProjectsCustom extends StatelessWidget {
     ];
 
     return SingleChildScrollView(
+      padding: EdgeInsets.only(bottom: getScreenHeight(context) * 0.05),
       child: Center(
         child: Wrap(
           spacing: screenWidth * 0.1,

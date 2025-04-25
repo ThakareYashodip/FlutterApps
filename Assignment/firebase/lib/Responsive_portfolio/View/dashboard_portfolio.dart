@@ -21,7 +21,7 @@ class DashBoardPortfolio extends StatelessWidget {
               child: ProfileInfo(),
             ),
             Expanded(
-              flex: 8,
+              flex: 9,
               child: TabControllerCustom(),
             )
           ],

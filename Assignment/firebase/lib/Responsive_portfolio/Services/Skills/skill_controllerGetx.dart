@@ -52,7 +52,7 @@ class SkillControllergetx extends GetxController {
       );
 
   Future<void> launchJava() => _launchUrlSkill(
-        'https://openjdk.org/',
+        'https://www.java.com/en/',
         'Could not launch Java',
       );
 
@@ -60,4 +60,10 @@ class SkillControllergetx extends GetxController {
         'https://nodejs.org/',
         'Could not launch Node.js',
       );
+
+   Future<void> launchLinux() => _launchUrlSkill(
+        'https://www.linux.org/',
+        'Could not launch Linux',
+      );
+
 }

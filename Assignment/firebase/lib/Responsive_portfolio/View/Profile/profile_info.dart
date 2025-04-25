@@ -28,6 +28,8 @@
 library;
 
 import 'package:animate_on_hover/animate_on_hover.dart';
+import 'package:blinking_text/blinking_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase/Responsive_portfolio/ResponsivePortfollio/responsive_font_size.dart';
 import 'package:firebase/Responsive_portfolio/Services/Profile/profile_services.dart';
 import 'package:firebase/Responsive_portfolio/View/Profile/profile_Info_row.dart';
@@ -58,18 +60,36 @@ class ProfileInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(height: getScreenHeight(context) * 0.04),
-            Container(
-              height: getScreenHeight(context) * 0.22,
-              width: getScreenHeight(context) * 0.22,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 40, 39, 39),
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: const Icon(
-                Icons.person,
-                size: 70,
-                color: Colors.white,
-              ),
+            Stack(
+              children: [
+                Container(
+                  height: getScreenHeight(context) * 0.22,
+                  width: getScreenHeight(context) * 0.22,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 40, 39, 39),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  alignment: Alignment.center,
+                  child: Image.network(
+                    "https://github.com/ThakareYashodip/FlutterApps/blob/master/Assignment/firebase/assets/Ganu.png",
+                    errorBuilder: (context, error, stackTrace) => Icon(
+                      Icons.person,
+                      size: getScreenHeight(context) * 0.10,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: -20,
+                  right: 5,
+                  child: BlinkText(
+                    '•',
+                    style: TextStyle(
+                        fontSize: getResponsiveFontSize(context, 40),
+                        color: Color.fromARGB(255, 4, 255, 0)),
+                    endColor: Colors.green,
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: getScreenHeight(context) * 0.015),
             Text(

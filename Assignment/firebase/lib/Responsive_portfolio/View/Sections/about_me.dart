@@ -8,6 +8,7 @@ class AboutMePortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      padding: EdgeInsets.only(bottom: getScreenHeight(context) * 0.05),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -68,7 +69,7 @@ class AboutMePortfolio extends StatelessWidget {
             height: getScreenHeight(context) * 0.025,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildServiceCard(
                 context,

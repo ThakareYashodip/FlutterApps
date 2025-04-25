@@ -62,6 +62,7 @@ dependencies:
   tab_container: ^3.5.3
   url_launcher: ^6.3.1
   carousel_slider: ^5.0.0
+  blinking_text: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -85,7 +86,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/ProgrammingLogos/
-
+    - assets/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
