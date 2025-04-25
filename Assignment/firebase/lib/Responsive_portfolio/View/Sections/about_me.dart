@@ -8,7 +8,6 @@ class AboutMePortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.only(bottom: getScreenHeight(context) * 0.05),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -22,7 +21,7 @@ class AboutMePortfolio extends StatelessWidget {
               wordSpacing: 1.5,
             ),
           ),
-          SizedBox(height: getScreenHeight(context) * 0.05),
+          SizedBox(height: getScreenHeight(context) * 0.025),
           Text(
             "If you're seeking a skilled Flutter developer to breathe life into your project and exceed your expectations, I am here to collaborate and create magic together. Reach out, and let's transform your vision into a reality!",
             textAlign: TextAlign.justify,
@@ -99,11 +98,11 @@ class AboutMePortfolio extends StatelessWidget {
   }) {
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: getScreenWidth(context) * 0.015,
-          vertical: getScreenWidth(context) * 0.005),
+        horizontal: getScreenHeight(context) * 0.015,
+      ),
       height: getScreenHeight(context) * 0.2,
       width: getScreenWidth(context) * 0.3,
-      margin: EdgeInsets.only(bottom: getScreenHeight(context) * 0.005),
+      margin: EdgeInsets.only(bottom: getScreenHeight(context) * 0.025),
       decoration: BoxDecoration(
         color: const Color.fromARGB(246, 22, 22, 22),
         borderRadius: BorderRadius.circular(5.0),
@@ -116,7 +115,7 @@ class AboutMePortfolio extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(
@@ -124,7 +123,6 @@ class AboutMePortfolio extends StatelessWidget {
             color: Colors.amber.shade400,
             size: getScreenHeight(context) * 0.05,
           ),
-          SizedBox(width: getScreenWidth(context) * 0.015),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

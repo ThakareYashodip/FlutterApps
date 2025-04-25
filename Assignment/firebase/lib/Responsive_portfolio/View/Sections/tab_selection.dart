@@ -19,8 +19,6 @@ class TabControllerCustom extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: getScreenWidth(context) * 0.7,
         padding: EdgeInsets.symmetric(
           horizontal: getScreenWidth(context) * 0.02,
           vertical: getScreenHeight(context) * 0.005,
@@ -36,7 +34,6 @@ class TabControllerCustom extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                spacing: getScreenHeight(context) * 0.025,
                 children: [
                   Obx(() {
                     final selectedIndex = tabController.selectedIndexTab.value;
@@ -53,23 +50,38 @@ class TabControllerCustom extends StatelessWidget {
                       20,
                     );
                   }),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: getScreenWidth(context) * 0.02,
-                      vertical: getScreenHeight(context) * 0.005,
-                    ),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(234, 29, 29, 29),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Row(
-                      spacing: getScreenWidth(context) * 0.025,
-                      children: [
-                        _tabButton(context, "About Me", 0, tabController),
-                        _tabButton(context, "Skills", 1, tabController),
-                        _tabButton(context, "Projects", 2, tabController),
-                        _tabButton(context, "Contact", 3, tabController),
-                      ],
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: getScreenWidth(context) * 0.02,
+                        vertical: getScreenHeight(context) * 0.005,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(234, 29, 29, 29),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: SizedBox(
+                        height:
+                            50, // Set a fixed height to prevent unbounded height errors
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 4,
+                          separatorBuilder: (context, index) =>
+                              SizedBox(width: getScreenWidth(context) * 0.015)
+                                  .increaseSizeOnHover(1.3),
+                          itemBuilder: (context, index) {
+                            final tabs = [
+                              "About Me",
+                              "Skills",
+                              "Projects",
+                              "Contact"
+                            ];
+                            return _tabButton(
+                                context, tabs[index], index, tabController);
+                          },
+                        ),
+                      ),
                     ),
                   ),
                 ],

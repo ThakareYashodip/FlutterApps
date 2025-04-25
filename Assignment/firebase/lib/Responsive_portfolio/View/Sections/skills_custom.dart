@@ -60,7 +60,7 @@ class SkillsCustom extends StatelessWidget {
             context,
             'What I Use',
             Colors.white,
-            getResponsiveFontSize(context, 18), // Slightly bigger font
+            getResponsiveFontSize(context, 16), // Slightly bigger font
           ),
           SizedBox(height: screenHeight * 0.025),
           SizedBox(
@@ -92,7 +92,7 @@ class SkillsCustom extends StatelessWidget {
             context,
             'In Progress',
             Colors.white,
-            getResponsiveFontSize(context, 18), // Slightly bigger font
+            getResponsiveFontSize(context, 16), // Slightly bigger font
           ),
           SizedBox(height: screenHeight * 0.025),
           SizedBox(

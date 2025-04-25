@@ -15,9 +15,12 @@ class ContactMePortfolio extends StatelessWidget {
     final ControllerGetx tabControllerGetx = Get.put(ControllerGetx());
 
     return SingleChildScrollView(
-      padding: EdgeInsets.only(bottom: getScreenHeight(context) * 0.05),
-      child: Column(
-        spacing: getScreenWidth(context) * 0.025,
+      padding: EdgeInsets.symmetric(vertical: getScreenHeight(context) * 0.05),
+      child: Wrap(
+        spacing: getScreenHeight(context) *
+            0.025, // Horizontal space between children
+        runSpacing:
+            getScreenHeight(context) * 0.025, // Vertical space between lines
         children: [
           // Contact Me
           Row(
@@ -30,7 +33,7 @@ class ContactMePortfolio extends StatelessWidget {
                 context,
                 "Contact Me",
                 Colors.white,
-                20,
+                getResponsiveFontSize(context, 16),
               ),
             ],
           ),

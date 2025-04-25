@@ -11,19 +11,25 @@ class DashBoardPortfolio extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: getScreenWidth(context) * 0.035,
-            vertical: getScreenHeight(context) * 0.055),
+          horizontal: getScreenWidth(context) * 0.035,
+          vertical: getScreenHeight(context) * 0.055,
+        ),
         child: Row(
-          spacing: 20,
           children: [
+            // Conditionally display ProfileInfo based on screen width
+            if (getScreenWidth(context) > 900) // Only show on larger screens
+              Expanded(
+                flex: 3, // Adjust the flex for larger screens
+                child: ProfileInfo(),
+              ),
+
+            // TabControllerCustom always takes remaining space
             Expanded(
-              flex: 3,
-              child: ProfileInfo(),
-            ),
-            Expanded(
-              flex: 9,
+              flex: (getScreenWidth(context) > 900)
+                  ? 8
+                  : 1, // Adjust flex based on screen width
               child: TabControllerCustom(),
-            )
+            ),
           ],
         ),
       ),

@@ -19,6 +19,7 @@ Widget buildInfoRow(
         onTap: onTap, // <-- Connect the onTap here!
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
+          spacing: getScreenHeight(context) * 0.02,
           children: [
             Container(
               height: getScreenHeight(context) * 0.055,
@@ -35,20 +36,25 @@ Widget buildInfoRow(
                 ],
               ),
               alignment: Alignment.center,
-              child: faIcon
-                  ? FaIcon(icon, color: Colors.amber.shade400, size: 16)
-                  : Icon(icon, color: Colors.amber.shade400, size: 18),
+              child: Icon(
+                icon,
+                color: Colors.amber.shade400,
+                size: getResponsiveFontSize(context, 18),
+              ),
             ),
-            SizedBox(width: getScreenHeight(context) * 0.0125),
             Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   label,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.ibmPlexSerif(
+                  style: GoogleFonts.dmSans(
                     color: Colors.grey,
-                    fontSize: getResponsiveFontSize(context, 12),
+                    fontSize: getResponsiveFontSize(
+                      context,
+                      getResponsiveFontSize(context, 12),
+                    ),
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -57,7 +63,10 @@ Widget buildInfoRow(
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.dmSans(
                     color: Colors.white,
-                    fontSize: getResponsiveFontSize(context, 12),
+                    fontSize: getResponsiveFontSize(
+                      context,
+                      getResponsiveFontSize(context, 12),
+                    ),
                     fontWeight: FontWeight.w600,
                   ),
                 ),

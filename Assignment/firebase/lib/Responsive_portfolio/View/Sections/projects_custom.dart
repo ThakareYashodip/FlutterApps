@@ -66,7 +66,7 @@ class ProjectsCustom extends StatelessWidget {
           runSpacing: screenHeight * 0.05,
           children: projects.map((project) {
             return SizedBox(
-              width: screenWidth * 0.25,
+              width: screenWidth * 0.20,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -76,8 +76,8 @@ class ProjectsCustom extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: Image.network(
                       project['image']!,
-                      height: screenHeight * 0.22,
-                      width: screenWidth * 0.20,
+                      height: getResponsiveHeight(context, 0.15),
+                      width: getResponsiveWidth(context, 0.8),
                       fit: BoxFit.fill,
                     ),
                   ).increaseSizeOnHover(1.2),

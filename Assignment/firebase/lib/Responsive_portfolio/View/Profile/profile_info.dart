@@ -57,27 +57,29 @@ class ProfileInfo extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: getScreenHeight(context) * 0.04),
             Stack(
               children: [
                 Container(
-                  height: getScreenHeight(context) * 0.22,
-                  width: getScreenHeight(context) * 0.22,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 40, 39, 39),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  alignment: Alignment.center,
-                  child: Image.network(
-                    "https://github.com/ThakareYashodip/FlutterApps/blob/master/Assignment/firebase/assets/Ganu.png",
-                    errorBuilder: (context, error, stackTrace) => Icon(
-                      Icons.person,
-                      size: getScreenHeight(context) * 0.10,
+                    height: getScreenHeight(context) * 0.22,
+                    width: getScreenHeight(context) * 0.22,
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 40, 39, 39),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
-                  ),
-                ),
+                    alignment: Alignment.center,
+                    child: ClipRRect(
+                      clipBehavior: Clip.antiAlias,
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        'https://raw.githubusercontent.com/ThakareYashodip/FlutterApps/master/Assignment/firebase/assets/Ganu.png',
+                        fit: BoxFit.cover,
+                        height: getScreenHeight(context) * 0.17,
+                        width: getScreenHeight(context) * 0.17,
+                      ),
+                    )),
                 Positioned(
                   bottom: -20,
                   right: 5,
@@ -91,49 +93,44 @@ class ProfileInfo extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: getScreenHeight(context) * 0.015),
             Text(
-              "Yashodip Thakare",
-              style: GoogleFonts.ibmPlexSerif(
+              "Yashodip Raju Thakare",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.dmSans(
                 color: Colors.white,
-                fontSize: getResponsiveFontSize(context, 18),
+                fontSize: getResponsiveFontSize(context, 16),
                 fontWeight: FontWeight.bold,
                 wordSpacing: 1.5,
               ),
             ).increaseSizeOnHover(1.5),
-            SizedBox(height: getScreenHeight(context) * 0.01),
-            FittedBox(
-              child: Container(
-                alignment: Alignment.center,
-                height: 28,
-                width: 110,
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 40, 39, 39),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Text(
-                  "Flutter Developer",
-                  style: GoogleFonts.yrsa(
-                    color: Colors.white,
-                    fontSize: getResponsiveFontSize(context, 8),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ).increaseSizeOnHover(1.5),
+            Container(
+              alignment: Alignment.center,
+              height: getScreenHeight(context) * 0.030,
+              width: getScreenHeight(context) * 0.18,
+              padding: EdgeInsets.all(getScreenHeight(context) * 0.005),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 40, 39, 39),
+                borderRadius: BorderRadius.circular(8.0),
               ),
+              child: Text(
+                "Flutter Developer",
+                style: GoogleFonts.dmSans(
+                  color: Colors.white,
+                  fontSize: getResponsiveFontSize(context, 8),
+                  fontWeight: FontWeight.bold,
+                ),
+              ).increaseSizeOnHover(1.5),
             ),
-            SizedBox(height: getScreenHeight(context) * 0.01),
             const Divider(
               color: Color.fromARGB(255, 228, 228, 228),
               thickness: 0.3,
             ),
-            SizedBox(height: getScreenHeight(context) * 0.01),
 
             buildInfoRow(
               context,
               icon: Icons.email,
               label: "Email",
-              value: "ganuthakare99@gmail.com",
+              value: "ganuthakare...",
               onTap: profileController.launchGmail,
             ),
 
@@ -152,8 +149,6 @@ class ProfileInfo extends StatelessWidget {
               value: "Pune, India",
               onTap: profileController.launchLocation,
             ),
-
-            SizedBox(height: getScreenHeight(context) * 0.015),
 
             // Social Icons Row
             SingleChildScrollView(
